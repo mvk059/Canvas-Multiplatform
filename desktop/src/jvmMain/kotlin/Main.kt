@@ -21,12 +21,7 @@ fun main() = application {
             val currentScreen by remember { navController.currentScreen }
 
             App(
-                onListItemClick = {
-                    when (it) {
-                        Screens.Home -> navController.navigate(it.route)
-                        Screens.Basics -> navController.navigate(it.route)
-                    }
-                }
+                onListItemClick = { navController.navigate(it.route) }
             )
 
             Box(
