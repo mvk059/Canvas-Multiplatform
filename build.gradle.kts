@@ -1,5 +1,5 @@
-group "com.mvk"
-version "1.0-SNAPSHOT"
+group = "com.mvk"
+version = "1.0-SNAPSHOT"
 
 allprojects {
     repositories {

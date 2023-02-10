@@ -9,7 +9,6 @@ plugins {
 group = "com.mvk"
 version = "1.0-SNAPSHOT"
 
-
 kotlin {
     jvm {
         jvmToolchain(11)
