@@ -14,6 +14,9 @@ kotlin {
     jvm("desktop") {
         jvmToolchain(11)
     }
+    js(IR) {
+        browser()
+    }
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -44,6 +47,7 @@ kotlin {
             }
         }
         val desktopTest by getting
+        val jsMain by getting
     }
 }
 
