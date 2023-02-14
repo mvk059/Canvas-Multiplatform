@@ -6,6 +6,7 @@ import androidx.compose.ui.Modifier
 import com.mvk.common.App
 import com.mvk.common.Canvas
 import com.mvk.common.navigation.Screens
+import com.mvk.common.ui.StarField
 
 @Composable
 fun Navigation(
@@ -17,18 +18,21 @@ fun Navigation(
 
             composable(Screens.Home.name) {
                 App(
-                    onListItemClick = {
-                        navController.navigate(it.name)
-                    }
+                    onListItemClick = { navController.navigate(it.name) }
                 )
             }
 
             composable(Screens.Basics.name) {
                 Canvas(
                     modifier = Modifier.fillMaxSize(),
-                    onDesktopBackClick = {
-                        navController.navigateBack()
-                    }
+                    onDesktopBackClick = { navController.navigateBack() }
+                )
+            }
+
+            composable(Screens.StarField.name) {
+                StarField(
+                    modifier = Modifier.fillMaxSize(),
+                    onDesktopBackClick = { navController.navigateBack() }
                 )
             }
         }

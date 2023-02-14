@@ -6,4 +6,5 @@ package com.mvk.common.navigation
 enum class Screens(val route: String) {
     Home("home"),
     Basics("basics"),
+    StarField("starfield"),
 }

@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.mvk.common.App
 import com.mvk.common.Canvas
 import com.mvk.common.navigation.Screens
+import com.mvk.common.ui.StarField
 
 @Composable
 fun NavigationHost(
@@ -37,6 +38,13 @@ fun NavigationHost(
                         onDesktopBackClick = { navController.popBackStack() })
                 }
             )
+
+            composable(Screens.StarField.name) {
+                StarField(
+                    modifier = Modifier.fillMaxSize(),
+                    onDesktopBackClick = { navController.popBackStack() }
+                )
+            }
         }
     )
 }
