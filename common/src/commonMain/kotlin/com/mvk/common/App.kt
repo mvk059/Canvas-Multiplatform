@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,15 +16,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
 import com.mvk.common.navigation.Screens
+import com.mvk.common.ui.components.AppBar
 
 @Composable
 fun App(
     onListItemClick: (Screens) -> Unit,
 ) {
 
-    Staggered(
+    Scaffold(
         modifier = Modifier.fillMaxSize(),
-        onListItemClick = onListItemClick
+        topBar = {
+            AppBar(
+                title = "Compose Multiplatform",
+                showNavigationIcon = false,
+            )
+        },
+        content = {
+            Staggered(
+                modifier = Modifier.fillMaxSize(),
+                onListItemClick = onListItemClick
+            )
+        }
     )
 }
 

@@ -20,6 +20,8 @@ kotlin {
                 api(compose.runtime)
                 api(compose.foundation)
                 api(compose.material)
+                api(compose.preview)
+                api("org.jetbrains.skiko:skiko-awt:0.7.50")
             }
         }
         val commonTest by getting {

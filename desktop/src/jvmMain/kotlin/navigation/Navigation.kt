@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.mvk.common.App
-import com.mvk.common.Canvas
+import com.mvk.common.ui.Canvas
 import com.mvk.common.navigation.Screens
 import com.mvk.common.ui.StarField
 

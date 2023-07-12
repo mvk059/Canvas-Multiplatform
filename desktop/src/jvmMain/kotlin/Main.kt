@@ -25,7 +25,6 @@ fun main() = application {
             )
 
             Box(
-                modifier = Modifier.fillMaxSize(),
                 content = { Navigation(navController = navController) }
             )
         }
