@@ -14,14 +14,15 @@ kotlin {
     jvm("desktop") {
         jvmToolchain(11)
     }
+    wasm {
+        browser()
+    }
     sourceSets {
         val commonMain by getting {
             dependencies {
                 api(compose.runtime)
                 api(compose.foundation)
                 api(compose.material)
-                api(compose.preview)
-                api("org.jetbrains.skiko:skiko-awt:0.7.50")
             }
         }
         val commonTest by getting {
@@ -35,18 +36,25 @@ kotlin {
                 api("androidx.core:core-ktx:1.9.0")
             }
         }
-        val androidTest by getting {
-            dependencies {
-                implementation("junit:junit:4.13.2")
-            }
-        }
+//        val androidTest by getting {
+//            dependencies {
+//                implementation("junit:junit:4.13.2")
+//            }
+//        }
         val desktopMain by getting {
             dependencies {
                 api(compose.preview)
             }
         }
         val desktopTest by getting
+        val wasmMain by getting {
+//            dependsOn(nonAndroidMain)
+        }
     }
+}
+
+compose.experimental {
+    web.application {}
 }
 
 android {
@@ -60,4 +68,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+
+compose {
+    val composeVersion = project.property("compose.wasm.version") as String
+    kotlinCompilerPlugin.set(composeVersion)
+    val kotlinVersion = project.property("kotlin.version") as String
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
 }
