@@ -8,3 +8,9 @@ try {
 } catch (e) {
   te = e;
 }
+
+if (te == null) {
+    document.getElementById("warning").style.display="none";
+} else {
+    throw te;
+}
