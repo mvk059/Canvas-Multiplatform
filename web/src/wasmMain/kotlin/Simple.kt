@@ -9,5 +9,3 @@ fun main() {
         StarField()
     }
 }
-
-fun greet() = "world"
