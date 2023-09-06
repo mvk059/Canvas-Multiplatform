@@ -28,8 +28,8 @@ jobs:
       - name: Test and Build
         run: ./gradlew :web:build
 
-#      - name: Copy "uninstantiated" file over (workaround for now)
-#        run: cp web/build/compileSync/wasm/main/productionExecutable/kotlin/canvasmultiplatform.uninstantiated.mjs web/build/dist/wasm/productionExecutable
+      - name: Copy "uninstantiated" file over (workaround for now)
+        run: cp web/build/compileSync/wasm/main/productionExecutable/kotlin/canvasmultiplatform.uninstantiated.mjs web/build/dist/wasm/productionExecutable
 
       # If main branch update, deploy to gh-pages
       - name: Deploy
