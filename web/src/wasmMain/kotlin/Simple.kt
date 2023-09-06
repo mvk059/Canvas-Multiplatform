@@ -5,7 +5,7 @@ import com.mvk.common.ui.StarField
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
 
-    CanvasBasedWindow("Chip8", canvasElementId = "jetsnackCanvas") {
+    CanvasBasedWindow("StarField", canvasElementId = "jetsnackCanvas") {
         StarField()
     }
 }
