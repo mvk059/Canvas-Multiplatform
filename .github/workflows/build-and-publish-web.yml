@@ -28,8 +28,8 @@ jobs:
       - name: Test and Build
         run: ./gradlew :web:build
 
-      - name: Copy "uninstantiated" file over (workaround for now)
-        run: cp web/build/compileSync/wasm/main/productionExecutable/kotlin/canvasmultiplatform.uninstantiated.mjs web/build/dist/wasm/productionExecutable
+#      - name: Copy "uninstantiated" file over (workaround for now)
+#        run: cp web/build/compileSync/wasm/main/productionExecutable/kotlin/canvasmultiplatform.uninstantiated.mjs web/build/dist/wasm/productionExecutable
 
       # If main branch update, deploy to gh-pages
       - name: Deploy
@@ -39,4 +39,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: web/build/dist/wasm/productionExecutable # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+          CLEAN: false # Automatically remove deleted files from the deploy branch
