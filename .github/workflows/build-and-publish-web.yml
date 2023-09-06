@@ -22,7 +22,7 @@ jobs:
 
       # Build application
       - name: Test and Build
-        run: ./gradlew :compose-web:build
+        run: ./gradlew :web:build
 
       - name: Copy "uninstantiated" file over (workaround for now)
         run: cp web/build/compileSync/wasm/main/productionExecutable/kotlin/canvasmultiplatform.uninstantiated.mjs web/build/dist/wasm/productionExecutable
