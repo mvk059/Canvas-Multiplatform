@@ -18,7 +18,7 @@ import com.mvk.common.ui.components.AppBar
 @Composable
 fun Canvas(
     modifier: Modifier = Modifier,
-    onDesktopBackClick: () -> Unit,
+    onDesktopBackClick: () -> Unit = {},
 ) {
 
     Scaffold(
