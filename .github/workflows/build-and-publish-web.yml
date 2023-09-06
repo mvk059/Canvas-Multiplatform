@@ -2,10 +2,6 @@ name: Build and Publish
 
 # configure manual trigger
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -22,11 +18,11 @@ jobs:
 
       # Check out current repository
       - name: Fetch Sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
 
       # Build application
       - name: Test and Build
-        run: ./gradlew :web:build
+        run: ./gradlew :compose-web:build
 
       - name: Copy "uninstantiated" file over (workaround for now)
         run: cp web/build/compileSync/wasm/main/productionExecutable/kotlin/canvasmultiplatform.uninstantiated.mjs web/build/dist/wasm/productionExecutable
